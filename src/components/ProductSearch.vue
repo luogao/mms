@@ -1,24 +1,23 @@
 <template>
   <div class="outer-apply">
     <div class="page-title">
-        <h2>出库查询</h2>
+        <h2>生产需求查询</h2>
     </div>
     <el-form ref="form" :model="form" label-position="top">
         <div class="over-clear">
             <div class="inline-form-item">
-                <el-form-item label="起始时间">
+                <el-form-item label="起始日期">
                     <el-input v-model="form.date"></el-input>
                 </el-form-item>
-                <el-form-item label="结束时间">
+                <el-form-item label="截止日期">
                     <el-input v-model="form.user"></el-input>
                 </el-form-item>
             </div>
             <div class="inline-form-item">
-                <el-form-item label="领用人">
+                <el-form-item label="需求部门">
                     <el-input v-model="form.reason"></el-input>
                 </el-form-item>
-                <el-form-item label="物料名称">
-                    <el-input v-model="form.code"></el-input>
+                <el-form-item>
                 </el-form-item>
             </div>
             <el-button class="pull-right" type="primary" @click="onSubmit">查询</el-button>
@@ -31,25 +30,27 @@
             <el-table-column type="index"></el-table-column>
             <el-table-column
             prop="code"
-            label="编号"
-            width="180">
+            label="编号">
             </el-table-column>
             <el-table-column
             prop="name"
-            label="名称"
-            width="180">
+            label="名称">
             </el-table-column>
             <el-table-column
-            prop="specification"
-            label="规格">
+            prop="name"
+            label="需求日期">
+            </el-table-column>
+             <el-table-column
+            prop="name"
+            label="需求部门">
             </el-table-column>
             <el-table-column
             prop="num"
-            label="数量">
+            label="需求数量">
             </el-table-column>
             <el-table-column
             prop="remarks"
-            label="备注">
+            label="需求状态">
             </el-table-column>
         </el-table>
         

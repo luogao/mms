@@ -1,23 +1,23 @@
 <template>
   <div class="outer-apply">
     <div class="page-title">
-        <h2>出库申请</h2>
+        <h2>采购单填写</h2>
     </div>
     <el-form ref="form" :model="form" label-position="top">
         <div class="inline-form-item">
-            <el-form-item label="出库时间">
+            <el-form-item label="申请日期">
                 <el-input v-model="form.date"></el-input>
             </el-form-item>
-            <el-form-item label="领用人">
+            <el-form-item label="截止日期">
                 <el-input v-model="form.user"></el-input>
             </el-form-item>
         </div>
         <div class="inline-form-item">
-            <el-form-item label="领用原因">
-                <el-input v-model="form.reason"></el-input>
+            <el-form-item label="申请数量">
+                <el-input v-model="form.vendor"></el-input>
             </el-form-item>
-            <el-form-item label="生产单编号">
-                <el-input v-model="form.code"></el-input>
+            <el-form-item label="申请人">
+                <el-input v-model="form.vendor"></el-input>
             </el-form-item>
         </div>
         <el-table
@@ -43,14 +43,21 @@
             </el-table-column>
             <el-table-column
             prop="specification"
-            label="规格">
+            label="截止日期">
             <template slot-scope="scope">
                 <el-input v-model="scope.specification"></el-input>
             </template>
             </el-table-column>
             <el-table-column
             prop="num"
-            label="数量">
+            label="申请部门">
+            <template slot-scope="scope">
+                <el-input v-model="scope.num"></el-input>
+            </template>
+            </el-table-column>
+            <el-table-column
+            prop="num"
+            label="申请数量">
             <template slot-scope="scope">
                 <el-input v-model="scope.num"></el-input>
             </template>
@@ -59,12 +66,12 @@
             prop="remarks"
             label="备注">
              <template slot-scope="scope">
-                <el-input v-model="scope.remarks"></el-input>
+                <el-input v-model="scope.prices"></el-input>
             </template>
             </el-table-column>
         </el-table>
         <el-form-item class="action-btn-group">
-            <el-button type="primary" @click="onSubmit">提交审核</el-button>
+            <el-button type="primary" @click="onSubmit">提交申请</el-button>
         </el-form-item>
     </el-form>
     
@@ -78,15 +85,14 @@ export default {
       form: {
         date: "",
         user: "",
-        reason: "",
-        code: ""
+        vendor: ""
       },
       tableData: [{
           code: '',
           name: '',
           specification: '',
           num:'',
-          remarks:''
+          prices:''
         }]
     };
   },
