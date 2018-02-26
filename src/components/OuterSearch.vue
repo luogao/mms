@@ -30,26 +30,32 @@
             style="width: 100%">
             <el-table-column type="index"></el-table-column>
             <el-table-column
-            prop="code"
-            label="编号"
-            width="180">
+            prop="key1"
+            label="编号">
             </el-table-column>
             <el-table-column
-            prop="name"
-            label="名称"
-            width="180">
+            prop="key2"
+            label="出库时间">
             </el-table-column>
             <el-table-column
-            prop="specification"
+            prop="key3"
+            label="名称">
+            </el-table-column>
+            <el-table-column
+            prop="key4"
             label="规格">
             </el-table-column>
             <el-table-column
-            prop="num"
+            prop="key5"
             label="数量">
             </el-table-column>
             <el-table-column
-            prop="remarks"
-            label="备注">
+            prop="key6"
+            label="出库状态">
+            </el-table-column>
+            <el-table-column
+            prop="key7"
+            label="领用人">
             </el-table-column>
         </el-table>
         
@@ -68,18 +74,42 @@ export default {
         reason: "",
         code: ""
       },
-      //   tableData: [{
-      //       code: '',
-      //       name: '',
-      //       specification: '',
-      //       num:'',
-      //       remarks:''
-      //     }]
       tableData: []
     };
   },
   methods: {
-    onSubmit() {}
+    onSubmit() {
+      let data = [
+        {
+          key1: "10001",
+          key2: "2017-10-26",
+          key3: "橡胶",
+          key4: "XJ-01",
+          key5: "5",
+          key6: "完成",
+          key7: "张三"
+        },
+        {
+          key1: "20001",
+          key2: "2017-11-16",
+          key3: "皮革",
+          key4: "PG-01",
+          key5: "10",
+          key6: "正在审批",
+          key7: "李四"
+        },
+        {
+          key1: "30001",
+          key2: "2017-12-22",
+          key3: "布料",
+          key4: "PL-01",
+          key5: "10",
+          key6: "正在审批",
+          key7: "王五"
+        }
+      ];
+      this.tableData = data;
+    }
   }
 };
 </script>

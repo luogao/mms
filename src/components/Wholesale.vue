@@ -22,27 +22,27 @@
             style="width: 100%">
             <el-table-column type="index"></el-table-column>
             <el-table-column
-            prop="code"
+            prop="key1"
             label="编号">
             </el-table-column>
             <el-table-column
-            prop="name"
+            prop="key2"
             label="名称">
             </el-table-column>
             <el-table-column
-            prop="name"
+            prop="key3"
             label="截止日期">
             </el-table-column>
              <el-table-column
-            prop="name"
+            prop="key4"
             label="单位">
             </el-table-column>
             <el-table-column
-            prop="num"
+            prop="key5"
             label="批发价">
             </el-table-column>
             <el-table-column
-            prop="remarks"
+            prop="key6"
             label="备注">
             </el-table-column>
         </el-table>
@@ -66,7 +66,32 @@ export default {
     };
   },
   methods: {
-    onSubmit() {}
+    onSubmit() {
+      let data = [
+        {
+          key1: "20171001",
+          key2: "运动鞋",
+          key3: "20180120",
+          key4: "双",
+          key5: "350"
+        },
+        {
+          key1: "20171002",
+          key2: "皮鞋",
+          key3: "20180130",
+          key4: "双",
+          key5: "600"
+        },
+        {
+          key1: "20171003",
+          key2: "布鞋",
+          key3: "20180201",
+          key4: "双",
+          key5: "70"
+        }
+      ];
+      this.tableData = data
+    }
   }
 };
 </script>

@@ -29,27 +29,27 @@
             style="width: 100%">
             <el-table-column type="index"></el-table-column>
             <el-table-column
-            prop="code"
+            prop="key1"
             label="编号">
             </el-table-column>
             <el-table-column
-            prop="name"
+            prop="key2"
             label="名称">
             </el-table-column>
             <el-table-column
-            prop="name"
+            prop="key3"
             label="截止日期">
             </el-table-column>
              <el-table-column
-            prop="name"
+            prop="key4"
             label="申请部门">
             </el-table-column>
             <el-table-column
-            prop="num"
+            prop="key5"
             label="申请数量">
             </el-table-column>
             <el-table-column
-            prop="remarks"
+            prop="key6"
             label="申请状态">
             </el-table-column>
         </el-table>
@@ -69,18 +69,39 @@ export default {
         reason: "",
         code: ""
       },
-      //   tableData: [{
-      //       code: '',
-      //       name: '',
-      //       specification: '',
-      //       num:'',
-      //       remarks:''
-      //     }]
       tableData: []
     };
   },
   methods: {
-    onSubmit() {}
+    onSubmit() {
+      let data = [
+        {
+          key1: "10001",
+          key2: "橡胶",
+          key3: "XJ-01",
+          key4: "2017-11-10",
+          key5: "运动鞋生产部",
+          key6: "完成采购"
+        },
+        {
+          key1: "20001",
+          key2: "皮革",
+          key3: "PG-01",
+          key4: "2017-12-10",
+          key5: "皮鞋生产部",
+          key6: "正在采购"
+        },
+        {
+          key1: "30001",
+          key2: "布料",
+          key3: "PL-01",
+          key4: "2017-12-15",
+          key5: "布鞋生产部",
+          key6: "正在审批"
+        }
+      ];
+      this.tableData = data
+    }
   }
 };
 </script>

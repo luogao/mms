@@ -31,31 +31,32 @@
             type="index">
             </el-table-column>
             <el-table-column
-            prop="code"
-            label="编号"
-            width="180">
+            prop="key1"
+            label="编号">
             </el-table-column>
             
             <el-table-column
-            prop="name"
-            label="名称"
-            width="180">
+            prop="key2"
+            label="名称">
             </el-table-column>
             <el-table-column
-            prop="specification"
+            prop="key3"
             label="规格">
             </el-table-column>
             <el-table-column
-            prop="date"
-            label="入库数量"
-            width="180">
+            prop="key4"
+            label="入库数量">
             </el-table-column>
             <el-table-column
-            prop="num"
+            prop="key5"
             label="出库数量">
             </el-table-column>
             <el-table-column
-            prop="user"
+            prop="key6"
+            label="库存余量">
+            </el-table-column>
+            <el-table-column
+            prop="key7"
             label="备注">
             </el-table-column>
         </el-table>
@@ -75,18 +76,39 @@ export default {
         reason: "",
         code: ""
       },
-      //   tableData: [{
-      //       code: '',
-      //       name: '',
-      //       specification: '',
-      //       num:'',
-      //       remarks:''
-      //     }]
       tableData: []
     };
   },
   methods: {
-    onSubmit() {}
+    onSubmit() {
+      let data = [
+        {
+          key1: "10001",
+          key2: "橡胶",
+          key3: "XJ-01",
+          key4: "15",
+          key5: "5",
+          key6: "10"
+        },
+        {
+          key1: "10002",
+          key2: "皮革",
+          key3: "PG-01",
+          key4: "20",
+          key5: "10",
+          key6: "10"
+        },
+        {
+          key1: "10003",
+          key2: "布料",
+          key3: "PL-01",
+          key4: "20",
+          key5: "10",
+          key6: "10"
+        }
+      ];
+      this.tableData = data;
+    }
   }
 };
 </script>
