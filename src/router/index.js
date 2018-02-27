@@ -1,17 +1,16 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+import Home from '@/page/Home'
+import Login from '@/page/Login'
 
-import Home from '@/components/Home'
-import Login from '@/components/Login'
-
-import { DataBackup, DataRecovery } from '@/components/data'
-import { UserRole, UserChange } from '@/components/user'
-import { SystemMaintenance, SystemUpgrade } from '@/components/system'
-import { Retail, Wholesale } from '@/components/sale'
-import { ProductApply, ProductSearch } from '@/components/product'
-import { PurchaseApply, PurchaseSearch } from '@/components/purchase'
-import { OuterApply, OuterSearch, InApply, InSearch, GoodsSearch } from '@/components/goods'
+import { DataBackup, DataRecovery } from '@/page/data'
+import { UserRole, UserChange } from '@/page/user'
+import { SystemMaintenance, SystemUpgrade } from '@/page/system'
+import { Retail, Wholesale } from '@/page/sale'
+import { ProductApply, ProductSearch } from '@/page/product'
+import { PurchaseApply, PurchaseSearch } from '@/page/purchase'
+import { OuterApply, OuterSearch, InApply, InSearch, GoodsSearch } from '@/page/goods'
 
 Vue.use(Router)
 
