@@ -15,6 +15,8 @@ import { OuterApply, OuterSearch, InApply, InSearch, GoodsSearch } from '@/page/
 Vue.use(Router)
 
 export default new Router({
+    base: '/mms/',
+    mode: 'history',
     routes: [{
         path: '/',
         name: 'Home',
