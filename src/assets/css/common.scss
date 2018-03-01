@@ -18,9 +18,10 @@ body {
 .mt0 {
   margin-top: 0;
 }
-.center-block{
-    display: inline-block;
-margin:0 auto ;
+
+.center-block {
+  display: inline-block;
+  margin: 0 auto;
 }
 
 .info-label {
@@ -84,4 +85,8 @@ a:hover {
       margin-right: 0px;
     }
   }
+}
+.el-date-editor.el-input,
+.el-date-editor.el-input__inner{
+    width: 100%;
 }

@@ -6,7 +6,12 @@
     <el-form ref="form" :model="form" label-position="top">
         <div class="inline-form-item">
             <el-form-item label="出库时间">
-                <el-input v-model="form.date"></el-input>
+                <el-date-picker
+                v-model="form.date"
+                align="right"
+                type="date"
+                placeholder="选择日期">
+                </el-date-picker>
             </el-form-item>
             <el-form-item label="领用人">
                 <el-input v-model="form.user"></el-input>
@@ -81,13 +86,15 @@ export default {
         reason: "",
         code: ""
       },
-      tableData: [{
-          code: '',
-          name: '',
-          specification: '',
-          num:'',
-          remarks:''
-        }]
+      tableData: [
+        {
+          code: "",
+          name: "",
+          specification: "",
+          num: "",
+          remarks: ""
+        }
+      ]
     };
   },
   methods: {
@@ -102,8 +109,8 @@ export default {
   .el-form--inline .el-form-item {
     width: 50%;
   }
-  .el-table{
-      margin-bottom: 50px;
+  .el-table {
+    margin-bottom: 50px;
   }
 }
 </style>

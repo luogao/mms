@@ -6,7 +6,13 @@
     <el-form ref="form" :model="form" label-position="top">
         <div class="inline-form-item">
             <el-form-item label="入库时间">
-                <el-input v-model="form.date"></el-input>
+                <el-date-picker
+                      v-model="form.date"
+                      align="right"
+                      type="date"
+                      placeholder="选择日期"
+                    >
+                </el-date-picker>
             </el-form-item>
             <el-form-item label="入库人">
                 <el-input v-model="form.user"></el-input>

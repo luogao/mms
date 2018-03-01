@@ -6,10 +6,22 @@
     <el-form ref="form" :model="form" label-position="top">
         <div class="inline-form-item">
             <el-form-item label="申请日期">
-                <el-input v-model="form.date"></el-input>
+                <el-date-picker
+                      v-model="form.date"
+                      align="right"
+                      type="date"
+                      placeholder="选择日期"
+                    >
+                  </el-date-picker>
             </el-form-item>
             <el-form-item label="截止日期">
-                <el-input v-model="form.user"></el-input>
+                <el-date-picker
+                      v-model="form.endDate"
+                      align="right"
+                      type="date"
+                      placeholder="选择日期"
+                    >
+                  </el-date-picker>
             </el-form-item>
         </div>
         <div class="inline-form-item">
@@ -85,7 +97,8 @@ export default {
       form: {
         date: "",
         user: "",
-        vendor: ""
+        vendor: "",
+        endDate:''
       },
       tableData: [{
           code: '',

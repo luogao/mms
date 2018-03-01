@@ -6,7 +6,7 @@
     <el-form ref="form" :model="form" label-position="top">
         <div class="inline-form-item">
             <el-form-item label="产品名称">
-                <el-input v-model="form.date"></el-input>
+                <el-input></el-input>
             </el-form-item>
             <el-form-item label="填写部门">
                 <el-input v-model="form.user"></el-input>
@@ -14,7 +14,13 @@
         </div>
         <div class="inline-form-item">
             <el-form-item label="需求日期">
-                <el-input v-model="form.vendor"></el-input>
+              <el-date-picker
+                    v-model="form.date"
+                    align="right"
+                    type="date"
+                    placeholder="选择日期"
+                >
+                </el-date-picker>
             </el-form-item>
             <el-form-item label="需求数量">
                 <el-input v-model="form.vendor"></el-input>
@@ -85,13 +91,15 @@ export default {
         user: "",
         vendor: ""
       },
-      tableData: [{
-          code: '',
-          name: '',
-          specification: '',
-          num:'',
-          prices:''
-        }]
+      tableData: [
+        {
+          code: "",
+          name: "",
+          specification: "",
+          num: "",
+          prices: ""
+        }
+      ]
     };
   },
   methods: {
@@ -102,7 +110,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.el-table{
-      margin-bottom: 50px;
-  }
+.el-table {
+  margin-bottom: 50px;
+}
 </style>

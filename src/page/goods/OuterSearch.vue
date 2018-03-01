@@ -7,10 +7,22 @@
         <div class="over-clear">
             <div class="inline-form-item">
                 <el-form-item label="起始时间">
-                    <el-input v-model="form.date"></el-input>
+                    <el-date-picker
+                      v-model="form.date"
+                      align="right"
+                      type="date"
+                      placeholder="选择日期"
+                    >
+                    </el-date-picker>
                 </el-form-item>
                 <el-form-item label="结束时间">
-                    <el-input v-model="form.user"></el-input>
+                    <el-date-picker
+                      v-model="form.endDate"
+                      align="right"
+                      type="date"
+                      placeholder="选择日期"
+                    >
+                    </el-date-picker>
                 </el-form-item>
             </div>
             <div class="inline-form-item">
@@ -72,7 +84,8 @@ export default {
         date: "",
         user: "",
         reason: "",
-        code: ""
+        code: "",
+        endDate: ""
       },
       tableData: []
     };
