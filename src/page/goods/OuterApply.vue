@@ -32,7 +32,6 @@
                 border
                 style="width: 100%">
                 <el-table-column
-                align="center"
                 prop="code"
                 label="编号"
                 width="180">
@@ -41,7 +40,6 @@
                 </template>
                 </el-table-column>
                 <el-table-column
-                align="center"
                 prop="name"
                 label="名称"
                 width="180">
@@ -50,7 +48,6 @@
                 </template>
                 </el-table-column>
                 <el-table-column
-                align="center"
                 prop="specification"
                 label="规格">
                 <template slot-scope="scope">
@@ -58,7 +55,6 @@
                 </template>
                 </el-table-column>
                 <el-table-column
-                align="center"
                 prop="num"
                 label="数量">
                 <template slot-scope="scope">
@@ -66,7 +62,6 @@
                 </template>
                 </el-table-column>
                 <el-table-column
-                align="center"
                 prop="remarks"
                 label="备注">
                 <template slot-scope="scope">
