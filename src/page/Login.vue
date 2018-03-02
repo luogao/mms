@@ -1,6 +1,9 @@
 <template>
   <div class="login">
     <el-form :model="form" label-position="top" :rules="rules" ref="loginForm">
+        <div class="logo-block">
+          <img src="../assets/logo.jpg" alt="">
+        </div>
         <h2 class="text-center">西安职业技术学院</h2>
         <h3 class="text-center">物料管理系统</h3>
         <el-form-item label="用户名" prop="name">
@@ -64,6 +67,12 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "../assets/css/_variables.scss";
+.logo-block{
+  text-align: center;
+  img{
+    width: 130px;
+  }
+}
 .login {
   height: 100vh;
   display: flex;
@@ -76,7 +85,6 @@ export default {
     background-color: #fff;
     border-radius: 5px;
     width: 50%;
-    height: 50%;
   }
 }
 </style>

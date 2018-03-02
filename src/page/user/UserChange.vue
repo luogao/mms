@@ -3,16 +3,17 @@
     <div class="page-title">
         <h2>用户切换</h2>
     </div>
-    <el-card class="box-card mt10">
-        <h3 class="mt0"><span class="info-label">当前用户</span>赵银玲</h3>
-        <h3 class="mt0"><span class="info-label">权限</span>1级</h3>
-    </el-card>
-    <el-form class="mt10">
-        <el-form-item class="action-btn-group">
-            <el-button type="primary" @click="onUserChange">用户切换</el-button>
-        </el-form-item>
-    </el-form>
-    
+    <div class="page-body">
+      <el-card class="box-card mt10">
+          <h3 class="mt0"><span class="info-label">当前用户</span>赵银玲</h3>
+          <h3 class="mt0"><span class="info-label">权限</span>1级</h3>
+      </el-card>
+      <el-form class="mt10">
+          <el-form-item class="action-btn-group">
+              <el-button type="primary" @click="onUserChange">用户切换</el-button>
+          </el-form-item>
+      </el-form>
+    </div>
   </div>
 </template>
 

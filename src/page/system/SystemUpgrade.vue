@@ -3,6 +3,7 @@
     <div class="page-title">
         <h2>系统升级</h2>
     </div>
+    <div class="page-body">
     <div class="text-center">
         <el-progress v-if="isUpgrade" type="circle" :status="percentage === 100 ? 'success' :''" :percentage="percentage"></el-progress>
     </div>
@@ -12,6 +13,7 @@
             <el-button v-if="isUpgrade" type="primary" size="small" @click="isUpgrade = false">{{percentage === 100 ? '完成' :'取消'}}</el-button>
         </el-form-item>
     </el-form>
+    </div>
   </div>
 </template>
 

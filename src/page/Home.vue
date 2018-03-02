@@ -8,7 +8,7 @@
             </div>
         </el-header>
         <el-container id="body">
-            <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
+            <el-aside width="256px" style="background-color: rgb(238, 241, 246);-webkit-box-shadow: 2px 0 6px rgba(0,21,41,.35);box-shadow: 2px 0 6px rgba(0,21,41,.35);position: relative;z-index: 10;">
                 <el-menu :default-active="$route.path.replace('/','')"  router unique-opened>
                     <el-submenu index="1">
                         <template slot="title">物料管理</template>
@@ -57,6 +57,9 @@
                 </el-menu>
             </el-aside>
             <el-main>
+                <el-breadcrumb separator="/" style="padding:20px;background:#fff;">
+                    <el-breadcrumb-item v-for="(item,index) in $route.meta.routeList" :key="index" :to="item.path">{{item.name}}</el-breadcrumb-item>
+                </el-breadcrumb>
                 <router-view/>
             </el-main>
         </el-container>
@@ -64,24 +67,24 @@
 </template>
 
 <style lang="scss">
-#body{
-    height: calc(100vh - 60px);
+#body {
+  height: calc(100vh - 60px);
 }
-.el-main{
-    overflow: auto;    
+.el-main {
+  overflow: auto;
 }
 .el-header {
-  background-color: #409EFF;
+  background-color: #409eff;
   color: #fff;
   line-height: 60px;
-  .header-title{
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      font-size: 14px;
-      h2{
-          margin: 0
-      }
+  .header-title {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 14px;
+    h2 {
+      margin: 0;
+    }
   }
 }
 .el-aside {

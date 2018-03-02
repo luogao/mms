@@ -3,14 +3,16 @@
     <div class="page-title">
         <h2>数据备份</h2>
     </div>
-    <el-alert
-        title="说明：数据备份需要一定的时间，请耐心等待"
-        type="info"
-        show-icon
-        close-text="知道了">
-    </el-alert>
-    <el-progress :percentage="percentage" v-if="startBackup" :status="percentage === 100 ? 'success':''" class="mt10"></el-progress>
-    <el-button size="small" type="primary" class="mt10" @click="startBackup = !startBackup">{{startBackup?'取消':'备份数据'}}</el-button>
+    <div class="page-body">
+      <el-alert
+          title="说明：数据备份需要一定的时间，请耐心等待"
+          type="info"
+          show-icon
+          close-text="知道了">
+      </el-alert>
+      <el-progress :percentage="percentage" v-if="startBackup" :status="percentage === 100 ? 'success':''" class="mt10"></el-progress>
+      <el-button size="small" type="primary" class="mt10" @click="startBackup = !startBackup">{{startBackup?'取消':'备份数据'}}</el-button>
+    </div>
   </div>
 </template>
 

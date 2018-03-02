@@ -3,6 +3,7 @@
     <div class="page-title">
         <h2>入库查询</h2>
     </div>
+    <div class="page-body">
     <el-form ref="form" :model="form" label-position="top">
         <div class="over-clear">
             <div class="inline-form-item">
@@ -74,7 +75,7 @@
         </el-table>
         
     </el-form>
-    
+    </div>
   </div>
 </template>
 

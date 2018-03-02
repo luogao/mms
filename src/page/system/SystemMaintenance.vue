@@ -3,6 +3,7 @@
     <div class="page-title">
         <h2>系统维护</h2>
     </div>
+    <div class="page-body">
     <div class="request-block">
       <ul>
         <template v-if="fakeData.length">
@@ -20,6 +21,7 @@
           </li>
         </template>
       </ul>
+    </div>
     </div>
   </div>
 </template>
