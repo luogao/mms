@@ -94,6 +94,20 @@ export default {
           specification: "",
           num: "",
           remarks: ""
+        },
+        {
+          code: "",
+          name: "",
+          specification: "",
+          num: "",
+          remarks: ""
+        },
+        {
+          code: "",
+          name: "",
+          specification: "",
+          num: "",
+          remarks: ""
         }
       ]
     };

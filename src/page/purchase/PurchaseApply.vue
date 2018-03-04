@@ -99,15 +99,31 @@ export default {
         date: "",
         user: "",
         vendor: "",
-        endDate:''
+        endDate: ""
       },
-      tableData: [{
-          code: '',
-          name: '',
-          specification: '',
-          num:'',
-          prices:''
-        }]
+      tableData: [
+        {
+          code: "",
+          name: "",
+          specification: "",
+          num: "",
+          prices: ""
+        },
+        {
+          code: "",
+          name: "",
+          specification: "",
+          num: "",
+          prices: ""
+        },
+        {
+          code: "",
+          name: "",
+          specification: "",
+          num: "",
+          prices: ""
+        }
+      ]
     };
   },
   methods: {
@@ -122,8 +138,8 @@ export default {
   .el-form--inline .el-form-item {
     width: 50%;
   }
-  .el-table{
-      margin-bottom: 50px;
+  .el-table {
+    margin-bottom: 50px;
   }
 }
 </style>

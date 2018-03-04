@@ -35,21 +35,21 @@ export default {
   },
   methods: {
     submitForm(formName) {
-      let vm = this 
+      let vm = this;
       this.$refs[formName].validate(valid => {
         if (valid) {
           this.$message({
             message: "登录成功",
             type: "success",
-            duration:1000,
-            onClose: ()=>{
-                vm.$router.replace({ path: '/' })
+            duration: 1000,
+            onClose: () => {
+              vm.$router.replace({ path: "/" });
             }
           });
         } else {
           this.$message({
             message: "登录失败",
-            duration:1000,
+            duration: 1000,
             type: "warning"
           });
           console.log("error submit!!");
@@ -67,10 +67,13 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "../assets/css/_variables.scss";
-.logo-block{
-  text-align: center;
-  img{
+.logo-block {
+  img {
     width: 130px;
+    box-shadow: 0px 4px 10px rgba(209, 42, 27, 0.2);
+    display: block;
+    border-radius: 50%;
+    margin: auto
   }
 }
 .login {

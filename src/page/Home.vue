@@ -57,9 +57,12 @@
                 </el-menu>
             </el-aside>
             <el-main>
-                <el-breadcrumb separator="/" style="padding:20px;background:#fff;">
-                    <el-breadcrumb-item v-for="(item,index) in $route.meta.routeList" :key="index" :to="item.path">{{item.name}}</el-breadcrumb-item>
-                </el-breadcrumb>
+                <div class="welcome" v-if="$route.fullPath === '/'">
+                    <div class="logo-block">
+                        <img src="../assets/logo.jpg" alt="">
+                    </div>
+                    <h2 class="welcome-title">欢迎使用物料管理系统</h2>
+                </div>
                 <router-view/>
             </el-main>
         </el-container>
@@ -90,6 +93,31 @@
 .el-aside {
   color: #333;
 }
+.welcome {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  .logo-block {
+    box-shadow: 0px 4px 10px rgba(209, 42, 27, 0.2);
+    width: 262px;
+    height: 262px;
+    text-align: center;
+    position: relative;
+    margin-top: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+    img {
+      position: absolute;
+      top: 0;
+      left: -3px;
+    }
+  }
+  .welcome-title {
+    font-size: 50px;
+    font-weight: 500;
+  }
+}
 </style>
 
 <script>
@@ -103,6 +131,9 @@ export default {
     return {
       tableData: Array(20).fill(item)
     };
+  },
+  mounted() {
+    console.log(this.$route);
   }
 };
 </script>

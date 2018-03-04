@@ -91,6 +91,18 @@ export default {
           specification: '',
           num:'',
           prices:''
+        },{
+          code: '',
+          name: '',
+          specification: '',
+          num:'',
+          prices:''
+        },{
+          code: '',
+          name: '',
+          specification: '',
+          num:'',
+          prices:''
         }]
     };
   },
