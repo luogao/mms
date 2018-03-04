@@ -51,19 +51,23 @@
               </el-table-column>
               <el-table-column
               prop="key3"
-              label="截止日期">
+              label="规格">
               </el-table-column>
               <el-table-column
               prop="key4"
-              label="申请部门">
+              label="截止日期">
               </el-table-column>
               <el-table-column
               prop="key5"
-              label="申请数量">
+              label="申请部门">
               </el-table-column>
               <el-table-column
               prop="key6"
               label="申请状态">
+              </el-table-column>
+              <el-table-column
+              prop="key7"
+              label="备注">
               </el-table-column>
           </el-table>
           

@@ -8,7 +8,10 @@
       <ul>
         <template v-if="fakeData.length">
           <li class="request-item" v-for="(item, index) in fakeData" :key="index">
-            <span class="item-name">{{item.name}}</span>
+            <div class="item-meta">
+              <span class="item-name">{{item.name}}</span>
+              <p class="item-detail">{{item.details}}</p>
+            </div>
             <div class="item-action">
               <el-button type="primary" size="mini" @click="change">更改</el-button>
               <el-button type="warning" size="mini" plain @click="stop(index)">终止审批</el-button>
@@ -32,19 +35,20 @@ export default {
     return {
       fakeData: [
         {
-          name: "申请1"
+          name: "出库申请",
+          details: '编号：30001；日期：2017-12-22；名称：布料；规格：PL-01；数量：10；领用人：王五'
         },
         {
-          name: "申请2"
+          name: "入库申请",
+          details: '编号：30001；日期：2017-10-22；名称：布料；规格：PL-01；数量：20；领用人：王五'
         },
         {
-          name: "申请3"
+          name: "生产需求申请",
+          details: '编号：20171003；名称：布鞋；需求日期：20180201；需求部门：布鞋生产部；需求数量：10000'
         },
         {
-          name: "申请4"
-        },
-        {
-          name: "申请5"
+          name: "采购单申请",
+          details: '编号：30001；名称：布料；规格：PL-01；截止日期：2017-12-15；申请部门：布鞋生产部；'
         }
       ]
     };
@@ -97,6 +101,9 @@ export default {
       display: block;
       font-weight: 600;
     }
+    .item-detail{
+      margin-bottom: 0;
+      }
   }
 }
 </style>

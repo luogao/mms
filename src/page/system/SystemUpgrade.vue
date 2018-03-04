@@ -9,8 +9,8 @@
     </div>
     <el-form class="mt10">
         <el-form-item class="action-btn-group">
-            <el-button v-if="!isUpgrade" type="primary" size="small" @click="systemUpgrade">系统升级</el-button>
-            <el-button v-if="isUpgrade" type="primary" size="small" @click="isUpgrade = false">{{percentage === 100 ? '完成' :'取消'}}</el-button>
+            <el-button v-if="!isUpgrade" type="primary" @click="systemUpgrade">系统升级</el-button>
+            <el-button v-if="isUpgrade" type="primary" @click="isUpgrade = false">{{percentage === 100 ? '完成' :'取消'}}</el-button>
         </el-form-item>
     </el-form>
     </div>

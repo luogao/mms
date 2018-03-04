@@ -11,7 +11,7 @@
           close-text="知道了">
       </el-alert>
       <el-progress :percentage="percentage" v-if="startBackup" :status="percentage === 100 ? 'success':''" class="mt10"></el-progress>
-      <el-button size="small" type="primary" class="mt10" @click="startBackup = !startBackup">{{startBackup?'取消':'备份数据'}}</el-button>
+      <el-button type="primary" class="mt10" @click="startBackup = !startBackup">{{startBackup?'取消':'备份数据'}}</el-button>
     </div>
   </div>
 </template>
@@ -57,9 +57,7 @@ export default {
   beforeRouteLeave (to, from, next) {
     // 导航离开该组件的对应路由时调用
     // 可以访问组件实例 `this`
-    console.log(this.startBackup)
     if(this.startBackup){
-      console.log(to,from)
       return
     }else{
       next()

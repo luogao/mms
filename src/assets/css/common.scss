@@ -152,5 +152,20 @@ a:hover {
   background: #545e69;
   border-color: #535e69;
   color: #fff;
-  
+}
+
+.el-table td,
+.el-table th.is-leaf,
+.el-table--border,
+.el-table--group,
+.el-table--border::after,
+.el-table--group::after,
+.el-table::before {
+  border-color: #9c9c9c;
+}
+
+.el-table--border::after,
+.el-table--group::after,
+.el-table::before {
+  background-color: #9c9c9c;
 }

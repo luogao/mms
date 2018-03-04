@@ -13,8 +13,8 @@
           :on-error="handleError"
           :on-success="handleSuccess"
           :auto-upload="false">
-          <el-button slot="trigger" size="small" type="primary">选取恢复数据</el-button>
-          <el-button style="margin-left: 10px;" size="small" v-if="selected" type="success" @click="submitUpload">开始恢复</el-button>
+          <el-button slot="trigger" type="primary">选取恢复数据</el-button>
+          <el-button style="margin-left: 10px;" v-if="selected" type="success" @click="submitUpload">开始恢复</el-button>
           <div slot="tip" class="el-upload__tip"></div>
       </el-upload>
     </div>
