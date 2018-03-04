@@ -135,3 +135,22 @@ a:hover {
     background: #f5f7fa;
   }
 }
+
+.el-table thead th {
+  color: #fff;
+}
+
+.apply-btn.el-button--primary.is-active,
+.apply-btn.el-button--primary:active {
+  background: #545e69;
+  border-color: #535e69;
+  color: #fff;
+}
+
+.apply-btn.el-button--primary:focus,
+.apply-btn.el-button--primary:hover {
+  background: #545e69;
+  border-color: #535e69;
+  color: #fff;
+  
+}

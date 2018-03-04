@@ -84,7 +84,7 @@
                 </el-table-column>
             </el-table>
             <el-form-item class="action-btn-group">
-                <el-button type="primary" @click="onSubmit">提交申请</el-button>
+                <el-button class="apply-btn" type="primary" @click="onSubmit">提交申请</el-button>
             </el-form-item>
         </el-form>
     </div>

@@ -10,7 +10,7 @@
           <li class="request-item" v-for="(item, index) in fakeData" :key="index">
             <span class="item-name">{{item.name}}</span>
             <div class="item-action">
-              <el-button type="primary" size="mini">更改</el-button>
+              <el-button type="primary" size="mini" @click="change">更改</el-button>
               <el-button type="warning" size="mini" plain @click="stop(index)">终止审批</el-button>
             </div>
           </li>
@@ -50,8 +50,22 @@ export default {
     };
   },
   methods: {
-    stop(index){
-      this.fakeData.splice(index,1)
+    stop(index) {
+      this.$confirm("是否终止该审批", "提示", {
+        confirmButtonText: "是",
+        cancelButtonText: "否",
+        type: "warning"
+      })
+        .then(() => {
+          this.fakeData.splice(index, 1);
+        })
+        .catch(() => {});
+    },
+    change() {
+      this.$message({
+        message: "更改成功",
+        type: "success"
+      });
     }
   }
 };
@@ -78,7 +92,7 @@ export default {
     & ~ .request-item {
       margin-top: 10px;
     }
-    &.no-data{
+    &.no-data {
       text-align: center;
       display: block;
       font-weight: 600;

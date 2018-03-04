@@ -5,6 +5,11 @@
                 <router-link to="/login"><h2>物料管理系统</h2></router-link>
                 <span>设计者：赵银玲</span>
                 <span>版本：V1.0</span>
+                <div v-if="username">
+                    <span>欢迎：<strong>{{username}}</strong></span>
+                    <a style="margin-left:20px;display:inline-block" href="javascript:;" @click="logout">退出</a>
+                </div>
+               
             </div>
         </el-header>
         <el-container id="body">
@@ -128,12 +133,43 @@ export default {
       name: "王小虎",
       address: "上海市普陀区金沙江路 1518 弄"
     };
+    const username = function() {
+      return localStorage.getItem("mmsUser")
+        ? localStorage.getItem("mmsUser")
+        : null;
+    };
     return {
-      tableData: Array(20).fill(item)
+      tableData: Array(20).fill(item),
+      username: username()
     };
   },
   mounted() {
-    console.log(this.$route);
+  },
+  methods: {
+    logout() {
+      this.$confirm("是否注销当前用户", "提示", {
+        confirmButtonText: "是",
+        cancelButtonText: "否",
+        type: "warning"
+      })
+        .then(() => {
+          localStorage.removeItem("mmsUser");
+          this.$message({
+            type: "success",
+            message: "注销成功",
+            duration: 1000,
+            onClose: () => {
+              this.$router.replace({ path: "/login" });
+            }
+          });
+        })
+        .catch(() => {
+          this.$message({
+            type: "info",
+            message: "已取消"
+          });
+        });
+    }
   }
 };
 </script>
