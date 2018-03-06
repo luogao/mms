@@ -2,14 +2,13 @@
     <el-container id="mian">
         <el-header style="text-align: right; font-size: 12px">
             <div class="header-title">
-                <h2>物料管理系统</h2>
+                <router-link to="/"><h2>物料管理系统</h2></router-link>
                 <span>设计者：赵银玲</span>
                 <span>版本：V1.0</span>
                 <div v-if="username">
                     <span>欢迎：<strong>{{username}}</strong></span>
                     <a style="margin-left:20px;display:inline-block" href="javascript:;" @click="logout">退出</a>
                 </div>
-               
             </div>
         </el-header>
         <el-container id="body">
