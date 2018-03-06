@@ -93,6 +93,7 @@ export default {
     border-radius: 5px;
     width: 50%;
     position: relative;
+    box-shadow: 0 5px 20px rgba(0,0,0,.3);
   }
 }
 </style>
