@@ -103,7 +103,7 @@ export default {
           key4: "XJ-01",
           key5: "15",
           key6: "完成",
-          key7: "张三"
+          key7: "张力"
         },
         {
           key1: "20001",
@@ -112,7 +112,7 @@ export default {
           key4: "PG-01",
           key5: "20",
           key6: "正在审批",
-          key7: "李四"
+          key7: "李智"
         },
         {
           key1: "30001",
@@ -121,7 +121,7 @@ export default {
           key4: "PL-01",
           key5: "20",
           key6: "正在审批",
-          key7: "王五"
+          key7: "王梦"
         }
       ];
       this.tableData = data;

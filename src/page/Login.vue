@@ -2,11 +2,15 @@
   <div class="login">
     <el-form :model="form" label-position="top" :rules="rules" ref="loginForm">
       <h1 class="text-center">物料管理系统</h1>
-      <el-form-item label="用户名" prop="name">
-          <el-input v-model="form.name"></el-input>
+      <el-form-item prop="name">
+          <el-input placeholder="请输入用户名" v-model="form.name">
+            <template slot="prepend">用户名</template>
+          </el-input>
       </el-form-item>
-      <el-form-item label="密码" prop="psw">
-          <el-input type="password" v-model="form.psw"></el-input>
+      <el-form-item prop="psw">
+          <el-input type="password" placeholder="请输入密码" v-model="form.psw">
+            <template slot="prepend">密码</template>
+          </el-input>
       </el-form-item>
       <el-form-item class="action-btn-group">
           <el-button type="primary" @click="onSubmit">登录</el-button>
@@ -30,7 +34,8 @@ export default {
       rules: {
         name: [{ required: true, message: "请输入用户名" }],
         psw: [{ required: true, message: "请输入密码" }]
-      }
+      },
+      userArray: ["张力", "李智", "王梦", "李娟", "张华"]
     };
   },
   methods: {
@@ -38,15 +43,26 @@ export default {
       let vm = this;
       this.$refs[formName].validate(valid => {
         if (valid) {
-          localStorage.setItem('mmsUser',vm.form.name)
-          this.$message({
-            message: "登录成功",
-            type: "success",
-            duration: 1000,
-            onClose: () => {
-              vm.$router.replace({ path: "/" });
-            }
-          });
+          if (
+            vm.userArray.indexOf(vm.form.name) !== -1 &&
+            vm.form.psw == 123456
+          ) {
+            localStorage.setItem("mmsUser", vm.form.name);
+            this.$message({
+              message: "登录成功",
+              type: "success",
+              duration: 1000,
+              onClose: () => {
+                vm.$router.replace({ path: "/" });
+              }
+            });
+          } else {
+            this.$message({
+              message: "登录失败，用户名或密码错误",
+              duration: 1000,
+              type: "warning"
+            });
+          }
         } else {
           this.$message({
             message: "登录失败",
@@ -66,7 +82,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
+<style lang="scss">
 @import "../assets/css/_variables.scss";
 // .logo-block {
 //   position: absolute;
@@ -85,15 +101,32 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $main_color;
+  background-color: #fff;
   .el-form {
+    max-width: 580px;
     box-sizing: border-box;
     padding: 30px;
-    background-color: #fff;
+    background-color: $main_color;
     border-radius: 5px;
     width: 50%;
     position: relative;
-    box-shadow: 0 5px 20px rgba(0,0,0,.3);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    .el-input__inner {
+      border-radius: 0 !important;
+    }
+    .el-input-group__append,
+    .el-input-group__prepend {
+      width: 50px !important;
+      border-radius: 0 !important;
+      color: #000 !important;
+      background: green;
+      border-color: green;
+    }
+    .action-btn-group {
+      .el-button {
+        background: blue;
+      }
+    }
   }
 }
 </style>

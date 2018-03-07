@@ -10,10 +10,26 @@
           show-icon
           close-text="知道了">
       </el-alert>
-      <el-card class="box-card mt10">
-          <h3 class="mt0"><span class="info-label">当前用户</span>赵银玲</h3>
-          <h3 class="mt0"><span class="info-label">权限</span>1级</h3>
-      </el-card>
+      <el-table
+        class="mt10"
+        :data="tableData"
+        stripe
+        border
+        style="width: 100%">
+        <el-table-column type="index"></el-table-column>
+        <el-table-column
+        prop="key1"
+        label="姓名">
+        </el-table-column>
+        <el-table-column
+        prop="key2"
+        label="权限">
+        </el-table-column>
+        <el-table-column
+        prop="key3"
+        label="备注">
+        </el-table-column>
+      </el-table>
     </div>
   </div>
 </template>
@@ -21,7 +37,29 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      tableData: [{
+        key1: '张力',
+        key2: '2级',
+        key3: ''
+      },{
+        key1: '李智',
+        key2: '2级',
+        key3: ''
+      },{
+        key1: '王梦',
+        key2: '1级',
+        key3: ''
+      },{
+        key1: '李娟',
+        key2: '2级',
+        key3: ''
+      },{
+        key1: '张华',
+        key2: '2级',
+        key3: ''
+      },]
+    };
   },
   methods: {}
 };

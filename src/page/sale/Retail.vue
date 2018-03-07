@@ -59,7 +59,6 @@
               label="备注">
               </el-table-column>
           </el-table>
-          
       </el-form>
     </div>
   </div>
