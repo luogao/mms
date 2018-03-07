@@ -5,7 +5,7 @@
     </div>
     <div class="page-body">
       <el-card class="box-card mt10">
-          <h3 class="mt0"><span class="info-label">当前用户</span>赵银玲</h3>
+          <h3 class="mt0"><span class="info-label">当前用户</span>王梦</h3>
           <h3 class="mt0"><span class="info-label">权限</span>1级</h3>
       </el-card>
       <el-form class="mt10">
