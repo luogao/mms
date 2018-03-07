@@ -57,6 +57,7 @@ export default {
         type: "warning"
       })
         .then(() => {
+          localStorage.removeItem('mmsUser')
           this.$message({
             type: "success",
             message: "注销成功",
