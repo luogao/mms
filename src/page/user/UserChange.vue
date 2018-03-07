@@ -5,8 +5,8 @@
     </div>
     <div class="page-body">
       <el-card class="box-card mt10">
-          <h3 class="mt0"><span class="info-label">当前用户</span>王梦</h3>
-          <h3 class="mt0"><span class="info-label">权限</span>1级</h3>
+          <h3 class="mt0"><span class="info-label">当前用户</span>{{curuser}}</h3>
+          <h3 class="mt0"><span class="info-label">权限</span>{{(userArray.filter(el=>{return el.name == curuser})[0].role)}}</h3>
       </el-card>
       <el-form class="mt10">
           <el-form-item class="action-btn-group">
@@ -20,7 +20,34 @@
 <script>
 export default {
   data() {
-    return {};
+    const curuser = () => {
+      return localStorage.getItem("mmsUser");
+    };
+    return {
+      curuser: curuser(),
+      userArray: [
+        {
+          name: "张力",
+          role: "2级"
+        },
+        {
+          name: "李智",
+          role: "2级"
+        },
+        {
+          name: "王梦",
+          role: "1级"
+        },
+        {
+          name: "李娟",
+          role: "2级"
+        },
+        {
+          name: "张华",
+          role: "2级"
+        }
+      ]
+    };
   },
   methods: {
     onUserChange() {
@@ -33,9 +60,9 @@ export default {
           this.$message({
             type: "success",
             message: "注销成功",
-            duration:1000,
-            onClose: ()=>{
-                this.$router.replace({ path: '/login' })
+            duration: 1000,
+            onClose: () => {
+              this.$router.replace({ path: "/login" });
             }
           });
         })
