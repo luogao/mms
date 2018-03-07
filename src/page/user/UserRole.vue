@@ -58,7 +58,7 @@ export default {
         key1: '张华',
         key2: '2级',
         key3: ''
-      },]
+      }]
     };
   },
   methods: {}
