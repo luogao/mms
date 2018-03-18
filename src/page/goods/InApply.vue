@@ -16,7 +16,14 @@
                     </el-date-picker>
                 </el-form-item>
                 <el-form-item label="入库人">
-                    <el-input v-model="form.user"></el-input>
+                    <el-select v-model="form.user" placeholder="请选择">
+                        <el-option
+                        v-for="item in options"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value">
+                        </el-option>
+                    </el-select>
                 </el-form-item>
             </div>
             <div class="inline-form-item">
@@ -43,7 +50,14 @@
                 label="名称"
                 width="180">
                 <template slot-scope="scope">
-                    <el-input v-model="scope.name"></el-input>
+                    <el-select v-model='scope.row.name' placeholder="请选择">
+                        <el-option
+                        v-for="item in options1"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value">
+                        </el-option>
+                    </el-select>
                 </template>
                 </el-table-column>
                 <el-table-column
@@ -85,25 +99,65 @@ export default {
         user: "",
         vendor: ""
       },
-      tableData: [{
-          code: '',
-          name: '',
-          specification: '',
-          num:'',
-          prices:''
-        },{
-          code: '',
-          name: '',
-          specification: '',
-          num:'',
-          prices:''
-        },{
-          code: '',
-          name: '',
-          specification: '',
-          num:'',
-          prices:''
-        }]
+      tableData: [
+        {
+          code: "",
+          name: "",
+          specification: "",
+          num: "",
+          prices: ""
+        },
+        {
+          code: "",
+          name: "",
+          specification: "",
+          num: "",
+          prices: ""
+        },
+        {
+          code: "",
+          name: "",
+          specification: "",
+          num: "",
+          prices: ""
+        }
+      ],
+      options: [
+        {
+          value: "张力",
+          label: "张力"
+        },
+        {
+          value: "李智",
+          label: "李智"
+        },
+        {
+          value: "王梦",
+          label: "王梦"
+        },
+        {
+          value: "李娟",
+          label: "李娟"
+        },
+        {
+          value: "张华",
+          label: "张华"
+        }
+      ],
+      options1: [
+        {
+          value: "1",
+          label: "橡胶"
+        },
+        {
+          value: "2",
+          label: "皮革"
+        },
+        {
+          value: "3",
+          label: "布料"
+        }
+      ]
     };
   },
   methods: {
@@ -118,8 +172,8 @@ export default {
   .el-form--inline .el-form-item {
     width: 50%;
   }
-  .el-table{
-      margin-bottom: 50px;
+  .el-table {
+    margin-bottom: 50px;
   }
 }
 </style>

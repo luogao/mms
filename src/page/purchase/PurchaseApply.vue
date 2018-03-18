@@ -27,10 +27,17 @@
             </div>
             <div class="inline-form-item">
                 <el-form-item label="申请数量">
-                    <el-input v-model="form.vendor"></el-input>
+                    <el-input v-model="form.user"></el-input>
                 </el-form-item>
                 <el-form-item label="申请人">
-                    <el-input v-model="form.vendor"></el-input>
+                    <el-select v-model="form.vendor" placeholder="请选择">
+                        <el-option
+                        v-for="item in options"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value">
+                        </el-option>
+                    </el-select>
                 </el-form-item>
             </div>
             <el-table
@@ -43,7 +50,7 @@
                 label="编号"
                 width="180">
                 <template slot-scope="scope">
-                    <el-input v-model="scope.code"></el-input>
+                    <el-input v-model="scope.row.code"></el-input>
                 </template>
                 </el-table-column>
                 <el-table-column
@@ -51,35 +58,42 @@
                 label="名称"
                 width="180">
                 <template slot-scope="scope">
-                    <el-input v-model="scope.name"></el-input>
+                    <el-select v-model="scope.row.name" placeholder="请选择">
+                        <el-option
+                        v-for="item in options1"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value">
+                        </el-option>
+                    </el-select>
                 </template>
                 </el-table-column>
                 <el-table-column
                 prop="specification"
                 label="截止日期">
                 <template slot-scope="scope">
-                    <el-input v-model="scope.specification"></el-input>
+                    <el-input v-model="scope.row.specification"></el-input>
                 </template>
                 </el-table-column>
                 <el-table-column
                 prop="num"
                 label="申请部门">
                 <template slot-scope="scope">
-                    <el-input v-model="scope.num"></el-input>
+                    <el-input v-model="scope.row.num"></el-input>
                 </template>
                 </el-table-column>
                 <el-table-column
                 prop="num"
                 label="申请数量">
                 <template slot-scope="scope">
-                    <el-input v-model="scope.num"></el-input>
+                    <el-input v-model="scope.row.num"></el-input>
                 </template>
                 </el-table-column>
                 <el-table-column
                 prop="remarks"
                 label="备注">
                 <template slot-scope="scope">
-                    <el-input v-model="scope.prices"></el-input>
+                    <el-input v-model="scope.row.prices"></el-input>
                 </template>
                 </el-table-column>
             </el-table>
@@ -122,6 +136,42 @@ export default {
           specification: "",
           num: "",
           prices: ""
+        }
+      ],
+      options: [
+        {
+          value: "张力",
+          label: "张力"
+        },
+        {
+          value: "李智",
+          label: "李智"
+        },
+        {
+          value: "王梦",
+          label: "王梦"
+        },
+        {
+          value: "李娟",
+          label: "李娟"
+        },
+        {
+          value: "张华",
+          label: "张华"
+        }
+      ],
+      options1: [
+        {
+          value: "1",
+          label: "橡胶"
+        },
+        {
+          value: "2",
+          label: "皮革"
+        },
+        {
+          value: "3",
+          label: "布料"
         }
       ]
     };

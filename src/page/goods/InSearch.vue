@@ -28,10 +28,24 @@
             </div>
             <div class="inline-form-item">
                 <el-form-item label="入库人">
-                    <el-input v-model="form.reason"></el-input>
+                    <el-select v-model="form.reason" placeholder="请选择">
+                        <el-option
+                        v-for="item in options"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value">
+                        </el-option>
+                    </el-select>
                 </el-form-item>
                 <el-form-item label="物料名称">
-                    <el-input v-model="form.code"></el-input>
+                    <el-select v-model="form.code" placeholder="请选择">
+                        <el-option
+                        v-for="item in options1"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value">
+                        </el-option>
+                    </el-select>
                 </el-form-item>
             </div>
             <el-button class="pull-right" type="primary" @click="onSubmit">查询</el-button>
@@ -90,7 +104,43 @@ export default {
         code: "",
         endDate: ""
       },
-      tableData: []
+      tableData: [],
+      options: [
+        {
+          value: "张力",
+          label: "张力"
+        },
+        {
+          value: "李智",
+          label: "李智"
+        },
+        {
+          value: "王梦",
+          label: "王梦"
+        },
+        {
+          value: "李娟",
+          label: "李娟"
+        },
+        {
+          value: "张华",
+          label: "张华"
+        }
+      ],
+      options1: [
+        {
+          value: "1",
+          label: "橡胶"
+        },
+        {
+          value: "2",
+          label: "皮革"
+        },
+        {
+          value: "3",
+          label: "布料"
+        }
+      ]
     };
   },
   methods: {

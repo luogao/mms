@@ -28,7 +28,14 @@
               </div>
               <div class="inline-form-item">
                   <el-form-item label="需求部门">
-                      <el-input v-model="form.reason"></el-input>
+                      <el-select v-model="form.reason" placeholder="请选择">
+                        <el-option
+                        v-for="item in options"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value">
+                        </el-option>
+                    </el-select>
                   </el-form-item>
                   <el-form-item>
                   </el-form-item>
@@ -81,9 +88,31 @@ export default {
         user: "",
         reason: "",
         code: "",
-        endDate:''
+        endDate: ""
       },
-      tableData: []
+      tableData: [],
+      options: [
+        {
+          value: "综合计划部",
+          label: "综合计划部"
+        },
+        {
+          value: "生产管理部",
+          label: "生产管理部"
+        },
+        {
+          value: "运动鞋生产部",
+          label: "运动鞋生产部"
+        },
+        {
+          value: "皮鞋生产部",
+          label: "皮鞋生产部"
+        },
+        {
+          value: "布鞋生产部",
+          label: "布鞋生产部"
+        }
+      ]
     };
   },
   methods: {

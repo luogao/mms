@@ -28,7 +28,14 @@
               </div>
               <div class="inline-form-item">
                   <el-form-item label="物料名称">
-                      <el-input v-model="form.reason"></el-input>
+                    <el-select v-model="form.code" placeholder="请选择">
+                        <el-option
+                        v-for="item in options1"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value">
+                        </el-option>
+                    </el-select>
                   </el-form-item>
                   <el-form-item>
                   </el-form-item>
@@ -90,7 +97,21 @@ export default {
         code: "",
         endDate:''
       },
-      tableData: []
+      tableData: [],
+      options1: [
+        {
+          value: "1",
+          label: "橡胶"
+        },
+        {
+          value: "2",
+          label: "皮革"
+        },
+        {
+          value: "3",
+          label: "布料"
+        }
+      ]
     };
   },
   methods: {

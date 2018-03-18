@@ -69,10 +69,18 @@ a:hover {
   }
 }
 
+.page-sub-title {
+  margin-top: 0;
+  color: #3f9eff;
+}
+
 .page-body {
   background: #fff;
   padding: 20px;
   margin: 24px 24px 0;
+  section+section {
+    margin-top: 20px;
+  }
 }
 
 .action-btn-group {
@@ -104,7 +112,8 @@ a:hover {
 }
 
 .el-date-editor.el-input,
-.el-date-editor.el-input__inner {
+.el-date-editor.el-input__inner,
+.el-select {
   width: 100%;
 }
 
@@ -168,4 +177,9 @@ a:hover {
 .el-table--group::after,
 .el-table::before {
   background-color: #9c9c9c;
+}
+.el-form--inline{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 }

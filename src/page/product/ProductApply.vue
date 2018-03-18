@@ -7,10 +7,24 @@
         <el-form ref="form" :model="form" label-position="top">
             <div class="inline-form-item">
                 <el-form-item label="产品名称">
-                    <el-input></el-input>
+                    <el-select v-model="form.name" placeholder="请选择">
+                        <el-option
+                        v-for="item in options1"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value">
+                        </el-option>
+                    </el-select>
                 </el-form-item>
                 <el-form-item label="填写部门">
-                    <el-input v-model="form.user"></el-input>
+                    <el-select v-model="form.user" placeholder="请选择">
+                        <el-option
+                        v-for="item in options"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value">
+                        </el-option>
+                    </el-select>
                 </el-form-item>
             </div>
             <div class="inline-form-item">
@@ -36,42 +50,49 @@
                 prop="code"
                 label="编号">
                 <template slot-scope="scope">
-                    <el-input v-model="scope.code"></el-input>
+                    <el-input v-model="scope.row.code"></el-input>
                 </template>
                 </el-table-column>
                 <el-table-column
                 prop="name"
                 label="名称">
                 <template slot-scope="scope">
-                    <el-input v-model="scope.name"></el-input>
+                    <el-input v-model="scope.row.name"></el-input>
                 </template>
                 </el-table-column>
                 <el-table-column
                 prop="specification"
                 label="规格">
                 <template slot-scope="scope">
-                    <el-input v-model="scope.specification"></el-input>
+                    <el-input v-model="scope.row.specification"></el-input>
                 </template>
                 </el-table-column>
                 <el-table-column
                 prop="num"
                 label="数量">
                 <template slot-scope="scope">
-                    <el-input v-model="scope.num"></el-input>
+                    <el-input v-model="scope.row.num"></el-input>
                 </template>
                 </el-table-column>
                 <el-table-column
                 prop="num"
                 label="需求部门">
                 <template slot-scope="scope">
-                    <el-input v-model="scope.num"></el-input>
+                    <el-select v-model="scope.row.remarks" placeholder="请选择">
+                        <el-option
+                        v-for="item in options"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value">
+                        </el-option>
+                    </el-select>
                 </template>
                 </el-table-column>
                 <el-table-column
                 prop="remarks"
                 label="备注">
                 <template slot-scope="scope">
-                    <el-input v-model="scope.prices"></el-input>
+                    <el-input v-model="scope.row.prices"></el-input>
                 </template>
                 </el-table-column>
             </el-table>
@@ -90,7 +111,8 @@ export default {
       form: {
         date: "",
         user: "",
-        vendor: ""
+        vendor: "",
+        name:''
       },
       tableData: [
         {
@@ -98,21 +120,60 @@ export default {
           name: "",
           specification: "",
           num: "",
-          prices: ""
+          prices: "",
+          remarks:""
         },
         {
           code: "",
           name: "",
           specification: "",
           num: "",
-          prices: ""
+          prices: "",
+          remarks:""
         },
         {
           code: "",
           name: "",
           specification: "",
           num: "",
-          prices: ""
+          prices: "",
+          remarks:""
+        }
+      ],
+      options: [
+        {
+          value: "综合计划部",
+          label: "综合计划部"
+        },
+        {
+          value: "生产管理部",
+          label: "生产管理部"
+        },
+        {
+          value: "运动鞋生产部",
+          label: "运动鞋生产部"
+        },
+        {
+          value: "皮鞋生产部",
+          label: "皮鞋生产部"
+        },
+        {
+          value: "布鞋生产部",
+          label: "布鞋生产部"
+        }
+      ],
+      options1: [
+        {
+          value: "1",
+          label: "运动鞋"
+        },
+        {
+          value: "2",
+          label: "皮鞋"
+        },
+        {
+          value: "3",
+          label: "布鞋"
         }
       ]
     };
