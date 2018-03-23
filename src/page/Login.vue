@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-    <el-form :model="form" label-position="top" :rules="rules" ref="loginForm">
+    <el-form :model="form" label-position="top" :rules="rules" ref="loginForm" @submit.native.prevent @submit="onSubmit">
       <h1 class="text-center">物料管理系统</h1>
       <el-form-item prop="name">
           <el-input placeholder="请输入用户名" v-model="form.name">
@@ -13,7 +13,7 @@
           </el-input>
       </el-form-item>
       <el-form-item class="action-btn-group">
-          <el-button type="primary" @click="onSubmit">登录</el-button>
+          <el-button type="primary" @click="onSubmit" native-type="submit">登录</el-button>
       </el-form-item>
       <h2 class="text-center">西安职业技术学院</h2>
       <!-- <div class="logo-block">
