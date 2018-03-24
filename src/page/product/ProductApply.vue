@@ -123,24 +123,23 @@ export default {
           num: "",
           prices: "",
           remarks:""
+        },
+        {
+          code: "",
+          name: "",
+          specification: "",
+          num: "",
+          prices: "",
+          remarks:""
+        },
+        {
+          code: "",
+          name: "",
+          specification: "",
+          num: "",
+          prices: "",
+          remarks:""
         }
-
-        // {
-        //   code: "",
-        //   name: "",
-        //   specification: "",
-        //   num: "",
-        //   prices: "",
-        //   remarks:""
-        // },
-        // {
-        //   code: "",
-        //   name: "",
-        //   specification: "",
-        //   num: "",
-        //   prices: "",
-        //   remarks:""
-        // }
       ],
       options: [
         {
