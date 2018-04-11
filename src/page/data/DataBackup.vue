@@ -1,9 +1,6 @@
 <template>
-  <div class="data-backup">
-    <div class="page-title">
-        <h2>数据备份</h2>
-    </div>
-    <div class="page-body">
+  <page title="数据备份" class="data-backup">
+    <template slot="page-body">
       <el-alert
           title="说明：数据备份需要一定的时间，请耐心等待"
           type="info"
@@ -12,8 +9,8 @@
       </el-alert>
       <el-progress :percentage="percentage" v-if="startBackup" :status="percentage === 100 ? 'success':''" class="mt10"></el-progress>
       <el-button type="primary" class="mt10" @click="startBackup = !startBackup">{{startBackup?'取消':'备份数据'}}</el-button>
-    </div>
-  </div>
+    </template>
+  </page>
 </template>
 
 <script>

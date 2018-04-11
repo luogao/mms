@@ -1,20 +1,17 @@
 <template>
-  <div class="system-block">
-    <div class="page-title">
-        <h2>系统升级</h2>
-    </div>
-    <div class="page-body">
-    <div class="text-center">
-        <el-progress v-if="isUpgrade" type="circle" :status="percentage === 100 ? 'success' :''" :percentage="percentage"></el-progress>
-    </div>
-    <el-form class="mt10">
-        <el-form-item class="action-btn-group">
-            <el-button v-if="!isUpgrade" type="primary" @click="systemUpgrade">系统升级</el-button>
-            <el-button v-if="isUpgrade" type="primary" @click="isUpgrade = false">{{percentage === 100 ? '完成' :'取消'}}</el-button>
-        </el-form-item>
-    </el-form>
-    </div>
-  </div>
+  <page title="系统升级" class="system-block">
+    <template slot="page-body">
+      <div class="text-center">
+          <el-progress v-if="isUpgrade" type="circle" :status="percentage === 100 ? 'success' :''" :percentage="percentage"></el-progress>
+      </div>
+      <el-form class="mt10">
+          <el-form-item class="action-btn-group">
+              <el-button v-if="!isUpgrade" type="primary" @click="systemUpgrade">系统升级</el-button>
+              <el-button v-if="isUpgrade" type="primary" @click="isUpgrade = false">{{percentage === 100 ? '完成' :'取消'}}</el-button>
+          </el-form-item>
+      </el-form>
+    </template>
+  </page>
 </template>
 
 <script>

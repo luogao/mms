@@ -2,9 +2,7 @@
     <el-container id="mian">
         <el-header style="text-align: right; font-size: 12px">
             <div class="header-title">
-                <router-link to="/"><h2>物料管理系统</h2></router-link>
-                <span>设计者：赵银玲</span>
-                <span>版本：V1.0</span>
+                <router-link to="/"><h2>管理系统</h2></router-link>
                 <div v-if="username">
                     <span>欢迎：<strong>{{username}}</strong></span>
                     <a style="margin-left:20px;display:inline-block" href="javascript:;" @click="logout">退出</a>
@@ -12,7 +10,7 @@
             </div>
         </el-header>
         <el-container id="body">
-            <el-aside width="256px" style="background-color: rgb(238, 241, 246);-webkit-box-shadow: 2px 0 6px rgba(0,21,41,.35);box-shadow: 2px 0 6px rgba(0,21,41,.35);position: relative;z-index: 10;">
+            <el-aside width="256px" class="home-aside">
                 <el-menu :default-active="$route.path.replace('/','')"  router unique-opened>
                     <el-submenu index="1">
                         <template slot="title">物料管理</template>
@@ -65,7 +63,7 @@
                     <div class="logo-block">
                         <img src="../assets/logo.jpg" alt="">
                     </div>
-                    <h2 class="welcome-title">欢迎使用物料管理系统</h2>
+                    <h2 class="welcome-title">欢迎使用管理系统</h2>
                 </div>
                 <router-view/>
             </el-main>
@@ -94,8 +92,14 @@
     }
   }
 }
-.el-aside {
+.home-aside {
+  flex-shrink: 0;
   color: #333;
+  background-color: rgb(238, 241, 246);
+  -webkit-box-shadow: 2px 0 6px rgba(0, 21, 41, 0.35);
+  box-shadow: 2px 0 6px rgba(0, 21, 41, 0.35);
+  position: relative;
+  z-index: 10;
 }
 .welcome {
   height: 100%;
@@ -112,14 +116,13 @@
     overflow: hidden;
     border-radius: 50%;
     img {
-      position: absolute;
-      top: 0;
-      left: -3px;
+      width: 100%;
+      height: 100%;
     }
   }
   .welcome-title {
     font-size: 50px;
-    font-weight: 500;
+    font-weight: 300;
   }
 }
 </style>
@@ -142,8 +145,7 @@ export default {
       username: username()
     };
   },
-  mounted() {
-  },
+  mounted() {},
   methods: {
     logout() {
       this.$confirm("是否注销当前用户", "提示", {

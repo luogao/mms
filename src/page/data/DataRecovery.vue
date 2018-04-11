@@ -1,9 +1,6 @@
 <template>
-  <div class="data-backup">
-    <div class="page-title">
-        <h2>数据恢复</h2>
-    </div>
-    <div class="page-body">
+  <page title="数据恢复" class="data-backup">
+    <template slot="page-body">
       <el-upload
           ref="upload"
           :on-preview="handlePreview"
@@ -17,8 +14,8 @@
           <el-button style="margin-left: 10px;" v-if="selected" type="success" @click="submitUpload">开始恢复</el-button>
           <div slot="tip" class="el-upload__tip"></div>
       </el-upload>
-    </div>
-  </div>
+    </template>
+  </page>
 </template>
 
 <script>

@@ -1,9 +1,6 @@
 <template>
-  <div class="user-block">
-    <div class="page-title">
-        <h2>用户切换</h2>
-    </div>
-    <div class="page-body">
+  <page class="user-block" title="用户切换">
+    <template slot="page-body">
       <el-card class="box-card mt10">
           <h3 class="mt0"><span class="info-label">当前用户</span>{{curuser}}</h3>
           <h3 class="mt0"><span class="info-label">权限</span>{{(userArray.filter(el=>{return el.name == curuser})[0].role)}}</h3>
@@ -13,8 +10,8 @@
               <el-button type="primary" @click="onUserChange">用户切换</el-button>
           </el-form-item>
       </el-form>
-    </div>
-  </div>
+    </template>
+  </page>
 </template>
 
 <script>
