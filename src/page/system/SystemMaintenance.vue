@@ -1,32 +1,29 @@
 <template>
-  <div class="system-block">
-    <div class="page-title">
-        <h2>系统维护</h2>
-    </div>
-    <div class="page-body">
-    <div class="request-block">
-      <ul>
-        <template v-if="fakeData.length">
-          <li class="request-item" v-for="(item, index) in fakeData" :key="index">
-            <div class="item-meta">
-              <span class="item-name">{{item.name}}</span>
-              <p class="item-detail">{{item.details}}</p>
-            </div>
-            <div class="item-action">
-              <el-button type="primary" size="mini" @click="change">更改</el-button>
-              <el-button type="warning" size="mini" plain @click="stop(index)">终止审批</el-button>
-            </div>
-          </li>
-        </template>
-        <template v-else>
-          <li class="request-item no-data">
-            暂无请求
-          </li>
-        </template>
-      </ul>
-    </div>
-    </div>
-  </div>
+  <page class="system-block" title="系统维护">
+    <template slot="page-body">
+      <div class="request-block">
+        <ul>
+          <template v-if="fakeData.length">
+            <li class="request-item" v-for="(item, index) in fakeData" :key="index">
+              <div class="item-meta">
+                <span class="item-name">{{item.name}}</span>
+                <p class="item-detail">{{item.details}}</p>
+              </div>
+              <div class="item-action">
+                <el-button type="primary" size="mini" @click="change">更改</el-button>
+                <el-button type="warning" size="mini" plain @click="stop(index)">终止审批</el-button>
+              </div>
+            </li>
+          </template>
+          <template v-else>
+            <li class="request-item no-data">
+              暂无请求
+            </li>
+          </template>
+        </ul>
+      </div>
+    </template>
+  </page>
 </template>
 
 <script>

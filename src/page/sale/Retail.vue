@@ -1,9 +1,6 @@
 <template>
-  <div class="outer-apply">
-    <div class="page-title">
-        <h2>产品零售</h2>
-    </div>
-    <div class="page-body">
+  <page class="outer-apply" title="产品零售">
+    <template slot="page-body">
       <el-form ref="form" :model="form" label-position="top">
           <div class="over-clear">
               <div class="inline-form-item">
@@ -60,8 +57,8 @@
               </el-table-column>
           </el-table>
       </el-form>
-    </div>
-  </div>
+    </template>
+  </page>
 </template>
 
 <script>

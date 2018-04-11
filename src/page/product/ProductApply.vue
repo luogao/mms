@@ -1,9 +1,6 @@
 <template>
-  <div class="outer-apply">
-    <div class="page-title">
-        <h2>生产需求填写</h2>
-    </div>
-    <div class="page-body">
+  <page class="outer-apply" title="生产需求填写">
+    <template slot="page-body">
         <el-form ref="form" :model="form" label-position="top">
             <div class="inline-form-item">
                 <el-form-item label="产品名称">
@@ -101,8 +98,8 @@
                 <el-button class="apply-btn" type="primary" @click="onSubmit">保存</el-button>
             </el-form-item>
         </el-form>
-    </div>
-  </div>
+    </template>
+  </page>
 </template>
 
 <script>

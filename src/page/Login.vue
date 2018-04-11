@@ -15,10 +15,6 @@
       <el-form-item class="action-btn-group">
           <el-button type="primary" @click="onSubmit" native-type="submit">登录</el-button>
       </el-form-item>
-      <h2 class="text-center">西安职业技术学院</h2>
-      <!-- <div class="logo-block">
-        <img src="../assets/logo.jpg" alt="">
-      </div> -->
     </el-form>
   </div>
 </template>
@@ -84,48 +80,23 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
 @import "../assets/css/_variables.scss";
-// .logo-block {
-//   position: absolute;
-//   bottom: 0;
-//   right: 0;
-//   img {
-//     width: 130px;
-//     box-shadow: 0px 4px 10px rgba(209, 42, 27, 0.2);
-//     display: block;
-//     border-radius: 50%;
-//     margin: auto
-//   }
-// }
 .login {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
+  background-color: $main_color;
   .el-form {
     max-width: 580px;
     box-sizing: border-box;
     padding: 30px;
-    background-color: $main_color;
+    background-color: #fff;
     border-radius: 5px;
     width: 50%;
     position: relative;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
     .el-input__inner {
       border-radius: 0 !important;
-    }
-    .el-input-group__append,
-    .el-input-group__prepend {
-      width: 50px !important;
-      border-radius: 0 !important;
-      color: #000 !important;
-      background: green;
-      border-color: green;
-    }
-    .action-btn-group {
-      .el-button {
-        background: blue;
-      }
     }
   }
 }

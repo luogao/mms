@@ -1,9 +1,6 @@
 <template>
-  <div class="user-block">
-    <div class="page-title">
-        <h2>用户权限</h2>
-    </div>
-    <div class="page-body">
+  <page class="user-block" title="用户权限">
+    <template slot="page-body">
       <section>
         <h3 class="page-sub-title">用户权限列表</h3>
         <el-alert
@@ -64,8 +61,8 @@
           </el-form-item>
         </el-form>
       </section>
-    </div>
-  </div>
+    </template>
+  </page>
 </template>
 
 <script>

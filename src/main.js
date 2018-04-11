@@ -6,10 +6,15 @@ import 'element-ui/lib/theme-chalk/index.css'
 import App from './App'
 import router from './router'
 import './assets/css/common.scss'
+import Page from '@/components/page'
+
 Vue.use(ElementUI)
+Vue.use(Page)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
-new Vue({el: '#app', router, components: {
+new Vue({
+  el: '#app', router, components: {
     App
-  }, template: '<App/>'})
+  }, template: '<App/>'
+})
